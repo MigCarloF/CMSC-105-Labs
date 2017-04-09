@@ -1,24 +1,14 @@
 package summaryTable;
 
 import javax.swing.JFrame;
-import javax.swing.JDesktopPane;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.SwingConstants;
 import java.awt.GridBagLayout;
-import com.jgoodies.forms.layout.FormLayout;
-import com.jgoodies.forms.layout.ColumnSpec;
-import com.jgoodies.forms.layout.RowSpec;
-import javax.swing.BoxLayout;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.InputMismatchException;
-import java.util.Scanner;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JTextField;
@@ -102,6 +92,7 @@ public class Sweng {
 
 		JButton btnDone = new JButton("Done");
 		btnDone.addActionListener(new ActionListener() {
+			@SuppressWarnings("unused")
 			public void actionPerformed(ActionEvent e) {
 				if (list.isEmpty()) {
 					JOptionPane.showMessageDialog(new JFrame(), "Input at least one item", "Dialog", JOptionPane.ERROR_MESSAGE);
@@ -109,8 +100,11 @@ public class Sweng {
 					Collections.sort(list);
 					if (category == 1) {
 						NumTable table = new NumTable(list);
+						frmSampler.dispose();
+						
 					} else if (category == 2) {
 						CatTable table = new CatTable(list);
+						frmSampler.dispose();
 						
 					} else {
 						try {

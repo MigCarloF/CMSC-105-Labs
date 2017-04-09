@@ -1,13 +1,12 @@
 package summaryTable;
 
-import java.awt.EventQueue;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
 
 public class NumTable {
 
-	private JFrame frame;
+	JFrame frame;
 	private ArrayList<String> list;
 
 	public NumTable(ArrayList<String> list) {
